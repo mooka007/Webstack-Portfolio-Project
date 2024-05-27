@@ -21,7 +21,7 @@ function Footer() {
               {/* brand logo goes to top on click */}
               <div className="">
                 <a className="" href="/">
-                  <img className="h-8 w-70" src={logo} alt="Housify Logo" />
+                  <img className="" src={logo} alt="Housify Logo" />
                 </a>
               </div>
   
@@ -57,20 +57,14 @@ function Footer() {
                 <NavLink className="pt-4 block text-base" to="/property">
                   <p className="text-l">View More Properties</p>
                 </NavLink>
-                <NavLink className="pt-4 block text-base" to="/agent">
-                  <p className="text-l">Find An Agent</p>
-                </NavLink>
                 <NavLink className="pt-4 block text-base" to="/contact">
                   <p className="text-l">Let's Hear From You</p>
                 </NavLink>
-                <NavLink className="pt-4 block text-base" to="/agentDashboard">
-                  <p className="text-l">Agent Dashboard</p>
-                </NavLink>
-                <NavLink className="pt-4 block text-base" to="/AgentForm">
-                  <p className="text-l">Become an Agent</p>
-                </NavLink>
                 <NavLink className="pt-4 block text-base" to="/loginForm">
                   <p className="text-l">Login</p>
+                </NavLink>
+                <NavLink className="pt-4 block text-base" to="/loginForm">
+                  <p className="text-l">Register</p>
                 </NavLink>
               </div>
             </div>
@@ -82,7 +76,7 @@ function Footer() {
         </div>
   
         <div className="text-center py-6 text-black text-xl">
-          <p>Copyright Housify 2022</p>
+          <p>Copyright HouseFinder - 2024</p>
         </div>
       </div>
     );
