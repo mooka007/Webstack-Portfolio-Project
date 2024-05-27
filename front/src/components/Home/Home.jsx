@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import SearchButton from "../Utils/SearchButton";
 import Service from "../About/Service";
+import FeaturedProperty from "../Property/FeaturedProperty";
 
 function Home() {
     return (
@@ -32,6 +33,12 @@ function Home() {
             />
             </div>
         </section>
+
+        <section className="bg-black text-white">
+            <FeaturedProperty header="Featured Properties" text="Check Out The top rated Properties around the World " /> {/*items={items} */ }
+        </section>
+
+        
 
         <section className="bg-black  text-center pt-16">
             <h3 className="text-purple-700 text-2xl ">Have a Question?</h3>
