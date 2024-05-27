@@ -4,6 +4,9 @@ import Footer from "../Footer/Footer";
 import SearchButton from "../Utils/SearchButton";
 import Service from "../About/Service";
 import FeaturedProperty from "../Property/FeaturedProperty";
+import Works from "../Utils/Works.js";
+import ExpertSection from "../Utils/ExpertSection";
+import Partners from "../Utils/Partners.js";
 
 function Home() {
     return (
@@ -38,8 +41,30 @@ function Home() {
             <FeaturedProperty header="Featured Properties" text="Check Out The top rated Properties around the World " /> {/*items={items} */ }
         </section>
 
-        
+        <section className="bg-black  text-white">
+            <div className="text-center pt-20">
+            <h3 className="text-purple-700 text-2xl">How it Works</h3>
+            <p className="mb-12">Confidence in Collaboration</p>
+            </div>
+            <Works />
+        </section>
 
+        <section className="bg-black text-white">
+            <div className="text-center pt-20">
+            <h3 className="text-purple-700 text-2xl">Meet an Agent</h3>
+            <p>Do you prefer to get advice from an Agent?</p>
+            <p>Now you meet them across the world.</p>
+            </div>
+            <ExpertSection />
+        </section>
+
+        <section className="bg-black text-white">
+            <div className="text-center pt-14">
+            <h3 className="text-purple-700 text-2xl">Our Partners</h3>
+            <p className="mb-12">We have strong partnership with renowned agencies and organizations.</p>
+            </div>
+            <Partners />
+        </section>
         <section className="bg-black  text-center pt-16">
             <h3 className="text-purple-700 text-2xl ">Have a Question?</h3>
             <p className="mb-20 text-white">Let us help you.</p>
