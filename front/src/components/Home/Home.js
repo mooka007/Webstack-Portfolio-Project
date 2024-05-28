@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import SearchButton from "../Utils/SearchButton";
-import Service from "../About/Service";
-import FeaturedProperty from "../Property/FeaturedProperty";
+import Header from "../Header/Header.js";
+import Footer from "../Footer/Footer.js";
+import SearchButton from "../Utils/SearchButton.js";
+import Service from "../About/Service.js";
+import FeaturedProperty from "../Property/FeaturedProperty.js";
 import Works from "../Utils/Works.js";
-import ExpertSection from "../Utils/ExpertSection";
+import ExpertSection from "../Utils/ExpertSection.js";
 import Partners from "../Utils/Partners.js";
 
 function Home() {
@@ -65,11 +65,13 @@ function Home() {
             </div>
             <Partners />
         </section>
+
         <section className="bg-black  text-center pt-16">
             <h3 className="text-purple-700 text-2xl ">Have a Question?</h3>
             <p className="mb-20 text-white">Let us help you.</p>
             <Footer />
         </section>
+        
     </div>
     );
 }
