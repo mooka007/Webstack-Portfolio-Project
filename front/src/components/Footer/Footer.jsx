@@ -21,7 +21,8 @@ function Footer() {
               {/* brand logo goes to top on click */}
               <div className="">
                 <a className="" href="/">
-                  <img className="" src={logo} alt="Housify Logo" />
+                  {/* <img className="" src={logo} alt="Housify Logo" /> */}
+                  <h3>HouseFinder</h3>
                 </a>
               </div>
   
