@@ -5,7 +5,7 @@ import About from "./components/About/About.js"
 import Property from "./components/Property/Property.js";
 import Agent from "./components/Agent/Agent.js"
 import AgentDashboard from "./components/Agent/AgentDashboard";
-
+import Contact from "./components/Contact/Contact.js";
 function App() {
   return (
     <>
@@ -15,7 +15,8 @@ function App() {
         <Route path="property" element={<Property />} />
         <Route path="agent" element={<Agent />} />
         <Route path="agentDashboard" element={<AgentDashboard />} />
-        {/*<Route path="contact" element={<Contact />} />
+        <Route path="contact" element={<Contact />} />
+        {/*
         <Route path="blog" element={<Blog />} />
         
         <Route path="UserForm" element={<SignupForm />} />
