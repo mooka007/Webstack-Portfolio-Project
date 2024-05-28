@@ -15,15 +15,15 @@ function Home() {
 
         <section className="ml-16 mr-16">
         <div className="max-w-[1440px] mx-auto py-5 px-10  md:flex justify-between">
-          <div className="md:grid text-center md:text-left grid-cols-2 gap-10">
-            <div className="my-10  md:my-auto">
-              <h1 className="pb-8 text-4xl md:text-6xl">Find Your Next Perfect Place To Live</h1>
-              <p className="text-xl mb-10">Let's help you find a home that is perfect for you</p>
-              <SearchButton />
+            <div className="md:grid text-center md:text-left grid-cols-2 gap-10">
+                <div className="my-10  md:my-auto">
+                <h1 className="pb-8 text-4xl md:text-6xl">Find Your Next Perfect Place To Live</h1>
+                <p className="text-xl mb-10">Let's help you find a home that is perfect for you</p>
+                <SearchButton />
+                </div>
+                {/* {<HeroImageBox p="Featured Homes" url ={items[0]?.url}/>} */}
+                {/* <HeroImageBox p="Featured Homes" url ={false | require("../../assets/h2.jpg")}/> */}
             </div>
-            {/* {<HeroImageBox p="Featured Homes" url ={items[0]?.url}/>} */}
-            {/* <HeroImageBox p="Featured Homes" url ={false | require("../../assets/h2.jpg")}/> */}
-          </div>
         </div>
         </section>
 

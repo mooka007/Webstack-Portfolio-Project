@@ -7,7 +7,7 @@ const Service = (props) => {
 
   return (
     <div>
-      <div className="max-w-[1440px] ml-16 mx-auto py-10  flex-col justify-between text-center md:flex-row relative">
+      <div className="max-w-[1440px]  mx-auto py-10  flex-col justify-between text-center md:flex-row relative">
         {/* property-card-container */}
         <div className="grid md:grid-cols-2 gap-6 md:gap-10 py-10">
           <div>
@@ -45,7 +45,7 @@ const Service = (props) => {
           </div>
         </div>
         <div className="w-full pt-4 pb-8 items-center md:absolute top-[67%] left-[-41%]">
-          <button className="mt-6">Learn More</button>
+        <button className="mt-6">Learn More</button>
         </div>
       </div>
     </div>
