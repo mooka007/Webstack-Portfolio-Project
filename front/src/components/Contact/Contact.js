@@ -4,6 +4,10 @@ import Hero from "../Hero/Hero";
 import Footer from "../Footer/Footer";
 import ContactDetails from "./ContactDetails";
 import ContactFormSection from "./ContactFormSection";
+import GoogleMap from "./GoogleMap";
+
+
+
 function Contact() {
   return (
     <div className="Contact">
@@ -14,6 +18,8 @@ function Contact() {
       />
       
       <ContactDetails />
+      <GoogleMap />
+
       <ContactFormSection />
       <Footer />
     </div>
