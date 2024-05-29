@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
 import Footer from "../Footer/Footer";
 import ContactDetails from "./ContactDetails";
-
+import ContactFormSection from "./ContactFormSection";
 function Contact() {
   return (
     <div className="Contact">
@@ -14,6 +14,7 @@ function Contact() {
       />
       
       <ContactDetails />
+      <ContactFormSection />
       <Footer />
     </div>
   );
