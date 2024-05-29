@@ -36,8 +36,9 @@ function ContactFormSection() {
       <div className="flex flex-col md:flex-row justify-between flex-wrap max-w-1440  p-10 pt-20  sm:px-20 md:px-[80px] lg:px-[300px] align-middle ">
         
         <div className=" mb-10">
-          <div className="bg-zinc-800 w-90% rounded-[50px] rounded-tr-none p-8 text-left min-w-[400px] max-w-[500px]">
+          <div className="bg-zinc-800 w-90% rounded-[50px] rounded-tr-none p-8 text-left min-w-[30px] max-w-[500px]">
             <form onSubmit={handleSubmit} action="" method="">
+              
               <div>
                 <h5 className="font-thin pb-4 text-5xl">Get In Touch</h5>
                 <p>Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur</p>
@@ -66,6 +67,7 @@ function ContactFormSection() {
                   Submit
                 </button>
               </div>
+
             </form>
           </div>
         </div>
