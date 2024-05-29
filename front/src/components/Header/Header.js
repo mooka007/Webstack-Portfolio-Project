@@ -73,7 +73,7 @@ function Header() {
         
                     <button className="">
                     {/* {!auth.user ? ( */}
-                        <NavLink to="/userForm">Get Started</NavLink>
+                        <NavLink to="/loginForm">Get Started</NavLink>
                     {/* // ) : (
                     //     <NavLink to="/agentDashboard">{auth.user}</NavLink>
                     // )} */}

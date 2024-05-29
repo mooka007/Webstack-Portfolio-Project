@@ -6,6 +6,7 @@ import Property from "./components/Property/Property.js";
 import Agent from "./components/Agent/Agent.js"
 import AgentDashboard from "./components/Agent/AgentDashboard";
 import Contact from "./components/Contact/Contact.js";
+import LoginForm from "./components/Forms/LoginForm.js";
 
 function App() {
   return (
@@ -17,11 +18,12 @@ function App() {
         <Route path="agent" element={<Agent />} />
         <Route path="agentDashboard" element={<AgentDashboard />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="loginForm" element={<LoginForm />} />
         {/*
         
         <Route path="UserForm" element={<SignupForm />} />
         <Route path="AgentForm" element={<RegisterAgent />} />
-        <Route path="loginForm" element={<LoginForm />} />*/}
+        */}
         <Route path="*" element={<Error />} /> 
       </Routes>
     </>
