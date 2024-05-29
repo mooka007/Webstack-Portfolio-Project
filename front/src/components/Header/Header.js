@@ -69,16 +69,7 @@ function Header() {
                     >
                     Contact
                     </NavLink>
-                    <NavLink
-                    to="/blog"
-                    className={({ isActive }) =>
-                        isActive
-                        ? "text-purple-500 block p-3 text-lg navlink"
-                        : "block p-3 text-lg navlink"
-                    }
-                    >
-                    Blog
-                    </NavLink>
+                    
         
                     <button className="">
                     {/* {!auth.user ? ( */}
@@ -165,16 +156,7 @@ function Header() {
                     >
                     Contact
                     </NavLink>
-                    <NavLink
-                    to="/blog"
-                    className={({ isActive }) =>
-                        isActive
-                        ? "text-purple-500 block p-3 text-lg navlink"
-                        : "block p-3 text-lg navlink"
-                    }
-                    >
-                    Blog
-                    </NavLink>
+                    
         
                     <button className="block m-4 ">
                     <NavLink className="" to="/UserForm">

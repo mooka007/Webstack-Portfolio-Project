@@ -9,7 +9,13 @@ function Map({ location, zoomLevel }) {
     <h4 className="map-h2">Come Visit Us At Our Office</h4>
 
     <div className="google-map">
-      <GoogleMapReact />
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: 'AIzaSyA3Ccjwgo0E1Bg9HrLWeZxLKzUitQ-uhOM' }}
+        defaultCenter={location}
+        defaultZoom={zoomLevel}
+      >
+        
+      </GoogleMapReact>
     </div>
   </div>
   )

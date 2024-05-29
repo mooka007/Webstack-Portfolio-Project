@@ -3,8 +3,8 @@ import Map from "./map/Map";
 
 const location = {
   address: "Street 007, La Fouine, Planet Zomroda Morocco :).",
-  lat: 5.45234,
-  lng: 1.10273,
+  lat: 31.7833, // Latitude du Maroc
+      lng: -7.0925 // Longitude du Maroc
 };
 
 function GoogleMap() {
