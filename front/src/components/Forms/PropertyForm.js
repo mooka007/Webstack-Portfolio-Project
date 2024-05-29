@@ -21,10 +21,10 @@ function ListPropertyForm() {
       event.preventDefault();
       //  SEND TO ENPOINT
       alert(`User Created!
-         Name: ${inputs.address} ${inputs.city}
-         Email: ${inputs.country}
-         
-         Thank you for listing a property`);
+          Name: ${inputs.address} ${inputs.city}
+          Email: ${inputs.country}
+          
+          Thank you for listing a property`);
     }
     setInputs({address: "",
     city: "",

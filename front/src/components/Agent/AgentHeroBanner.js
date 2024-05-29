@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import User from "../../assets/user.png";
 import { NavLink } from "react-router-dom";
 import MoreProperty from "../Property/MoreProperty";
-import ListPropertyForm from "../Templates/ListPropertyForm";
+import PropertyForm from "../Forms/PropertyForm";
 
 const AgentHeroBanner = (props) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -23,9 +23,9 @@ const AgentHeroBanner = (props) => {
               <div className="md:grid grid-cols-2 justify-between w-full pt-6 text-left ">
                 <div>
                   <h5 className="inline-block mr-4">address</h5>
-                  <p>7 MCC Avenue, Boston, Canada</p>
+                  <p>7 street Avenue, Boston, Canada</p>
                   <h5 className="inline-block mr-4">phonenumber</h5>
-                  <p>+234-890-2033-333</p>
+                  <p>+212-89-203-3333</p>
                   <h5 className="inline-block mr-4">email</h5>
                   <p>agentOne@gmail.com</p>
                 </div>
@@ -64,7 +64,7 @@ const AgentHeroBanner = (props) => {
       </div>
 
       {isClicked ? (
-        <ListPropertyForm />
+        <PropertyForm />
       ) : (
         <MoreProperty header="Properties" text="Listed Properties By User" />
       )}
