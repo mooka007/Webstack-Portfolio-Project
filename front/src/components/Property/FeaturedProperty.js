@@ -1,5 +1,5 @@
 import PropertyCard from "../Utils/PropertyCard";
-//import useFetch from "../utils/useFetch";
+import useFetch from "../Utils/useFetch";
 
 const FeaturedProperty = ({ items, text, header }) => {
   return (
@@ -12,13 +12,13 @@ const FeaturedProperty = ({ items, text, header }) => {
         </div>
 
         {/* property-card-container */}
-        {/* <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {items.map(({ id, title, url, price, purpose, state }) => (
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {items.map(({ id, title, url, price, purpose, state }) => ( 
             <div className="p-10" key={id}>
               <PropertyCard img={url} price={price} state={state} purpose={purpose} title={title} />
             </div>
           ))}
-        </div> */}
+        </div>
         <h3>Items </h3>
         <div className="w-full pt-10 items-center"></div>
         <button>Load More</button>

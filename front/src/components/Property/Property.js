@@ -6,11 +6,11 @@ import FeaturedProperty from "../Property/FeaturedProperty";
 import MoreProperty from "./MoreProperty";
 import Footer from "../Footer/Footer";
 import SearchBar from "../Utils/SearchBar";
-// import useFetch  from "../Utils/useFetch";
+import useFetch  from "../Utils/useFetch";
 
 
 function Property() {
-  // const {items} = useFetch()
+  const {items} = useFetch()
   
   return (
     <div className="Property">
@@ -19,10 +19,10 @@ function Property() {
 
       <SearchBar />
     
-      <FeaturedProperty header="Featured Properties" text="Check Out The top rated Properties around the World " />
+      <FeaturedProperty header="Featured Properties" text="Check Out The top rated Properties around the World " items={items}/>
 
       
-      {/* <MoreProperty /> */}
+      <MoreProperty />
       <Footer />
     </div>
   );
