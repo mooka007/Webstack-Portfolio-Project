@@ -7,8 +7,11 @@ import FeaturedProperty from "../Property/FeaturedProperty.js";
 import Works from "../Utils/Works.js";
 import ExpertSection from "../Utils/ExpertSection.js";
 import Partners from "../Utils/Partners.js";
+import useFetch from "../Utils/useFetch";
+import HeroImageBox from "../Utils/HeroImageBox";
 
 function Home() {
+    const {items} = useFetch()
     return (
     <div className="Home">
         <Header />
@@ -21,8 +24,8 @@ function Home() {
                 <p className="text-xl mb-10">Let's help you find a home that is perfect for you</p>
                 <SearchButton />
                 </div>
-                {/* {<HeroImageBox p="Featured Homes" url ={items[0]?.url}/>} */}
-                {/* <HeroImageBox p="Featured Homes" url ={false | require("../../assets/h2.jpg")}/> */}
+                <HeroImageBox p="Featured Homes" url ={items[0]?.url}/>
+                {/* <HeroImageBox p="Featured Homes" url ={false | require("../../assets/h2.jpg")/>*/}
             </div>
         </div>
         </section>

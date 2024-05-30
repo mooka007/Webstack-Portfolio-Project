@@ -37,26 +37,30 @@ const SignupForm = () => {
       </div> */}
 
       <form onSubmit={handleSubmit}>
-        <div className="flex  text-left py-10 bg-zinc-700 mb-10 justify-center align-middle text-xl ">
+        <div className="flex  text-left py-10 bg-zinc-700 mb-10 justify-center align-middle text-xl  ">
           <div className="w-[400px]">
             <div className="grid grid-cols-2  mb-4 align-middle">
+              
               <div
                 className="bg-zinc-900 flex justify-center align-middle py-4"
                 onClick={() => navigate("/userForm")}
               >
                 Sign up
               </div>
+              
               <div
                 className="bg-zinc-800 flex justify-center align-middle py-4"
                 onClick={() => navigate("/loginForm")}
               >
                 Login
               </div>
+            
             </div>
+            
             <div>
               <label>Username</label>
               <input
-                className="formInput"
+                className="formInput "
                 type="text"
                 name="username"
                 onChange={handleInputChange}
@@ -102,6 +106,7 @@ const SignupForm = () => {
                 value={inputs.repeatPassword}
               />
             </div>
+            
             <div className="mx-auto text-left text-xl">
               {/* <button onClick={NavigateToLoginForm}>Submit</button> */}
               {/* <button onClick={navigateToHome} cl></button> */}

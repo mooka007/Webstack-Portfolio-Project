@@ -4,10 +4,20 @@ import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { useAuth } from "../../commons/auth";
 
 function Header() {
-    const [nav, setNav] = useState(false);
 
+    const auth = useAuth();
+    const navigate = useNavigate();
+    const [nav, setNav] = useState(false);
+    const handleNav = () => {
+        setNav(!nav);
+        };
+    const handleLogout = () => {
+        auth.logout();
+        navigate("/home");
+        };
     return (
         <div className="Header bg-zinc-900 w-full">
             <div className="max-w-[1440px] mx-auto py-6 px-10 flex justify-between">
@@ -50,7 +60,7 @@ function Header() {
                     Property
                     </NavLink>
                     <NavLink
-                    to="/agent"
+                    to="/agentDashboard"
                     className={({ isActive }) =>
                         isActive
                         ? "text-purple-500 block p-3 text-lg navlink"
@@ -79,10 +89,10 @@ function Header() {
                     // )} */}
                     </button>
                     {/* {auth.user ? ( */}
-                    <div className="block p-3 text-lg navlink" >
-                        Logout
-                    </div>
-                    {/* ) : null} */}
+                    {/* <div className="block p-3 text-lg navlink" >
+                        <a href="/">Log Out</a>
+                    </div> */}
+                    {/*) : null}*/ }
                 </nav>
                 </div>
         
