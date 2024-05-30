@@ -1,8 +1,8 @@
-// import HeroImageBox from "../utils/HeroImageBox";
-// import useFetch from "../utils/useFetch";
+import HeroImageBox from "../Utils/HeroImageBox";
+import useFetch from "../Utils/useFetch";
 
 const Hero = (props) => {
-  // const { items } = useFetch();
+  const { items } = useFetch();
 
   return (
     <div className="w-full">
@@ -17,7 +17,7 @@ const Hero = (props) => {
           </div>
 
           {/* HeroImageBox component */}
-          {/* <HeroImageBox p="Texas ChampHouse UK"  /> */}
+          <HeroImageBox p="Texas ChampHouse UK"  />
         </div>
       </div>
     </div>
