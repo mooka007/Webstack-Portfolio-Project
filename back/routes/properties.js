@@ -2,7 +2,21 @@ const router = require("express").Router();
 const Property = require("../models/Property");
 const verify = require("../middleware/verifyToken");
 
+//CREATE LIST OF PROPERTY AS PER AGENT
+router.post("/users/:id/property", verify, async (req, res) => {
+  if (req.user.isAdmin) {
+    const newProperty = new Property(req.body);
 
+    try {
+      const savedProperty = await newProperty.save();
+      res.status(201).json(savedList);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(403).json("You are not allowed!");
+  }
+});
 
 //DELETE PROPERTY AS PER AGENT
 router.delete("users/:id/property", verify, async (req, res) => {
@@ -44,23 +58,6 @@ router.get("/users/:id/property", verify, async (req, res) => {
     res.status(200).json(list);
   } catch (err) {
     res.status(500).json(err);
-  }
-});
-
-
-//CREATE LIST OF PROPERTY AS PER AGENT
-router.post("/users/:id/property", verify, async (req, res) => {
-  if (req.user.isAdmin) {
-    const newProperty = new Property(req.body);
-
-    try {
-      const savedProperty = await newProperty.save();
-      res.status(201).json(savedList);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  } else {
-    res.status(403).json("You are not allowed!");
   }
 });
 
