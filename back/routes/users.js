@@ -4,31 +4,6 @@ const bcrypt = require("bcrypt");
 const verify = require("../middleware/verifyToken");
 
 
-//UPADTE
-router.put("/:id", verify, async (req, res) => {
-  if (req.user.id === req.params.id || req.user.isAdmin) {
-    if (req.body.password) {
-      req.body.password = bcrypt.hash(
-        req.body.password,
-        'my_secret_key'
-      );//.toString();
-    }
-    try {
-      const  updatedUser = await User.findByIdAndUpdate(
-        req.params.id,
-        {
-          $set:req.body
-        },
-        { new: true }
-      );
-      res.status(200).json(updatedUser);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  } else {
-    res.status(403).json("You can only update your account!")
-  }
-});
 
 //DELETE
 router.delete("/:id", verify, async (req, res) => {
@@ -108,5 +83,32 @@ router.get("/stats", async (req, res) => {
     res.status(500).json(err)
   }
 })
+
+//UPADTE
+router.put("/:id", verify, async (req, res) => {
+  if (req.user.id === req.params.id || req.user.isAdmin) {
+    if (req.body.password) {
+      req.body.password = bcrypt.hash(
+        req.body.password,
+        'my_secret_key'
+      );//.toString();
+    }
+    try {
+      const  updatedUser = await User.findByIdAndUpdate(
+        req.params.id,
+        {
+          $set:req.body
+        },
+        { new: true }
+      );
+      res.status(200).json(updatedUser);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(403).json("You can only update your account!")
+  }
+});
+
 
 module.exports = router;
