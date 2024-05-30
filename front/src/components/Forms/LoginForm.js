@@ -41,7 +41,7 @@ const LoginForm = () => {
                 <div className="grid grid-cols-2  mb-4 align-middle">
                 <div
                     className="bg-zinc-900 flex justify-center align-middle py-4"
-                    onClick={() => navigate("/userForm")}
+                    onClick={() => navigate("/SignupForm")}
                 >
                     Sign up
                 </div>
