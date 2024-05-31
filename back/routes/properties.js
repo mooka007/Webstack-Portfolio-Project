@@ -18,7 +18,19 @@ router.post("/users/:id/property", verify, async (req, res) => {
   }
 });
 
-
+//DELETE PROPERTY AS PER AGENT
+router.delete("users/:id/property", verify, async (req, res) => {
+  if (req.users.isAdmin) {
+    try {
+      await Property.findByIdAndDelete(req.params.id);
+      res.status(201).json("The list has been deleted...");
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(403).json("You are not allowed!");
+  }
+});
 
 //GET PROPERTY AS PER AGENT
 router.get("/users/:id/property", verify, async (req, res) => {
@@ -48,21 +60,5 @@ router.get("/users/:id/property", verify, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-//DELETE PROPERTY AS PER AGENT
-router.delete("users/:id/property", verify, async (req, res) => {
-  if (req.users.isAdmin) {
-    try {
-      await Property.findByIdAndDelete(req.params.id);
-      res.status(201).json("The list has been deleted...");
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  } else {
-    res.status(403).json("You are not allowed!");
-  }
-});
-
 
 module.exports = router;
