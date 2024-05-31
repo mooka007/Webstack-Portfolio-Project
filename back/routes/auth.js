@@ -3,7 +3,22 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken')
 
+//Register User.
+router.post("/register", async (req, res) => {
+  const salt = await bcrypt.genSalt(10);
+  const newUser = new User({
+    username: req.body.username,
+    email: req.body.email,
+    password:  (await bcrypt.hash(req.body.password, salt)),//.toString(),
+  });
 
+  try{
+    const user = await newUser.save();
+    res.status(201).json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Login User
 router.post("/login", async (req, res) => {
@@ -25,25 +40,6 @@ router.post("/login", async (req, res) => {
     } 
   } else {
     res.status(401).json("User does not exists");
-  }
-});
-
-
-
-//Register User.
-router.post("/register", async (req, res) => {
-  const salt = await bcrypt.genSalt(10);
-  const newUser = new User({
-    username: req.body.username,
-    email: req.body.email,
-    password:  (await bcrypt.hash(req.body.password, salt)),//.toString(),
-  });
-
-  try{
-    const user = await newUser.save();
-    res.status(201).json(user);
-  } catch (err) {
-    res.status(500).json(err);
   }
 });
 
