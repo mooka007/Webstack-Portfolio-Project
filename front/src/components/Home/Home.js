@@ -58,7 +58,7 @@ function Home() {
             <p>Do you prefer to get advice from an Agent?</p>
             <p>Now you meet them across the world.</p>
             </div>
-            {/* <ExpertSection /> */}
+            <ExpertSection />
         </section>
 
         <section className="bg-black text-white">

@@ -2,11 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import axios from "axios";
+import { useAuth } from "../../commons/auth";
 
+const baseUrl = "http://localhost:8800";
 
 const LoginForm = () => {
     // authentication
-
+    const auth = useAuth();
     const navigate = useNavigate();
     // implementing state and hooks
     const [inputs, setInputs] = useState({
@@ -16,19 +19,38 @@ const LoginForm = () => {
 
     const handleSubmit = async (event) => {
         if (event) {
-        event.preventDefault();
+          event.preventDefault();
+    
+          const data = await axios.post(`${baseUrl}/login`, {
+            password: inputs.password,
+            email: inputs.email,
+          });
+          console.log("DATA", data.data);
+          const { isLogin, feedback } = data.data;
+    
+          if (isLogin) {
+            auth.login(feedback.username);
+            navigate("/", { replace: true });
+            alert(`welcome ${feedback.username}`);
+          } else {
+            alert(feedback);
+          }
+          setInputs({
+            password: "",
+            email: "",
+          });
         }
-    };
-
+        };
+    
     const handleInputChange = async (event) => {
         event.persist();
         const { name, value } = event.target;
-
+    
         setInputs((prevInputs) => ({
-        ...prevInputs,
-        [name]: value,
+          ...prevInputs,
+          [name]: value,
         }));
-    };
+        };
 
     return (
     <div className="Property">

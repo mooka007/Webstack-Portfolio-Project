@@ -2,6 +2,8 @@ import { useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+const baseUrl = "http://localhost:8080/api/auth";
 
 
 const SignupForm = () => {
@@ -16,7 +18,25 @@ const SignupForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    if (inputs.password === inputs.repeatPassword) {
+      const data = await axios.post(`${baseUrl}/SignupForm`, {
+        username: inputs.username,
+        email: inputs.email,
+        password: inputs.password,
+      });
+      const success = data.data.success;
+      console.log("DATA: ", data.data.success);
+
+      success ? navigate("/loginForm", { replace: true }) : alert("Try again");
+    } else {
+      alert("password does not match");
+      setInputs({
+        username: inputs.username,
+        email: inputs.email,
+        password: "",
+        rePassword: "",
+      });
+    }
   };
 
   const handleInputChange = (event) => {

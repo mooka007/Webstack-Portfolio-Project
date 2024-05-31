@@ -70,7 +70,6 @@ const Form = () => {
               <input
                 className="formInput"
                 type="textarea"
-                
                 onChange={handleInputChange}
                 value={inputs.email}
                 placeholder="Your Message :"
