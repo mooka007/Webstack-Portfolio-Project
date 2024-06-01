@@ -1,6 +1,4 @@
 import React from "react";
-import { FaLinkedin } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const ExpertCard = (props) => {

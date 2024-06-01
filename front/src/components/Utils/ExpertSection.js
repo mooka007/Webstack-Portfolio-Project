@@ -1,10 +1,10 @@
 import React from "react";
 import ExpertCard from "./ExpertCard";
-import { NavLink } from "react-router-dom";
 import agentwo from "../../assets/agentwo.jpg"
 import agentone from "../../assets/agentone.jpg"
 import agenthree from "../../assets/agenthree.jpg"
 import agentfour from "../../assets/agentfour.jpg"
+
 const ExpertSection = (props) => {
   return (
     <div className="w-full">
@@ -18,26 +18,18 @@ const ExpertSection = (props) => {
         {/* property-card-container */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="p-2">
-            <ExpertCard name="Agent One" linkedin="" contact=""  img={agentone}/>
+            <ExpertCard name="Agent One" img={agentone}/>
           </div>
           <div className="p-2">
-            <ExpertCard name="Agent two" linkedin="" contact=""  img={agentwo}/>
+            <ExpertCard name="Agent two" img={agentwo}/>
           </div>
           <div className="p-2">
-            <ExpertCard name="Agent three" linkedin="" contact="" img={agenthree}/>
+            <ExpertCard name="Agent three" img={agenthree}/>
           </div>
           <div className="p-2">
-            <ExpertCard name="Agent four" linkedin="" contact="" img={agentfour}/>
+            <ExpertCard name="Agent four" img={agentfour}/>
           </div>
         </div>
-        {/* <div className="w-full pt-10 flex justify-center">
-          <button className="mx-4">Load More</button>
-          <button className="mx-4">
-            <NavLink className="" to="/AgentForm">
-              Become Agent
-            </NavLink>
-          </button>
-        </div> */}
       </div>
     </div>
   );

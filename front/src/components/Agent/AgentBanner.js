@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import User1 from "../../assets/agentone.jpg";
 import { NavLink } from "react-router-dom";
-import MoreProperty from "../Property/MoreProperty";
-import PropertyForm from "../Forms/PropertyForm";
 
- const AgentHeroBanner = (props) => {
+const AgentHeroBanner = (props) => {
 
 
   return (

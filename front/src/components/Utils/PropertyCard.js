@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const PropertyCard = (items) => {
   const navigate = useNavigate()
   const handleClick = ()=>{
-    navigate("/login")
+    navigate("/AgentForm")
   }
   return (
     <div className="bg-zinc-800 rounded-[50px] rounded-tr-none  hover:border-2 border-zinc-400 duration-300">

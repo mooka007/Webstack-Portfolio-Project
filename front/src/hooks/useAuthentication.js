@@ -20,11 +20,6 @@ const login = async(email, password) => {
         })
         const json = await res.json()
         console.log(json)
-        
-        if(!res.ok){
-            setIsLoading(false)
-            setError(json.error) 
-        }
 
         if(res.ok){
             // save the user to local storage
@@ -39,6 +34,7 @@ const login = async(email, password) => {
     }
     return { login, isLoading, error }
 }
+
 export const useLogout = () => {
     const { dispatch } = useAuthContext()
 

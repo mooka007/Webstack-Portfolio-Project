@@ -1,7 +1,7 @@
 import PropertyCard from "../Utils/PropertyCard";
-import useFetch from "../Utils/useFetch";
 
 const FeaturedProperty = ({ items, text, header }) => {
+  console.log(items)
   return (
     
     <div className="w-full">
@@ -14,7 +14,7 @@ const FeaturedProperty = ({ items, text, header }) => {
 
         {/* property-card-container */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {items.map(({ id, title, url, price, purpose, state }) => ( 
+          {Array.isArray(items) && items.map(({ id, title, url, price, purpose, state }) => ( 
             <div className="p-10" key={id}>
               <PropertyCard img={url} price={price} state={state} purpose={purpose} title={title} />
             </div>
