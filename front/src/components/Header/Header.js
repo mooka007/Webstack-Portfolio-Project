@@ -1,23 +1,22 @@
 import React from "react";
 import { useState } from "react";
-import logo from "../../assets/logo.png";
-import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { useAuth } from "../../commons/auth";
+import  {useAuthContext}  from '../../hooks/useAuthContext'
+import { useLogout } from '../../hooks/useAuthentication'
+
 
 function Header() {
 
-    const auth = useAuth();
-    const navigate = useNavigate();
+    const { user } = useAuthContext()
+    const {logout } = useLogout()
     const [nav, setNav] = useState(false);
     const handleNav = () => {
         setNav(!nav);
         };
     const handleLogout = () => {
-        auth.logout();
-        navigate("/home");
-        };
+        logout()
+        window.location.assign('/login');        };
     return (
         <div className="Header bg-zinc-900 w-full">
             <div className="max-w-[1440px] mx-auto py-6 px-10 flex justify-between">
@@ -29,6 +28,7 @@ function Header() {
                 </div>
                 <div className="hidden lg:flex">
                 <nav className="flex items-center">
+                    {/* home */}
                     <NavLink
                     to="/"
                     className={({ isActive }) =>
@@ -39,6 +39,8 @@ function Header() {
                     >
                     Home
                     </NavLink>
+
+                    {/* about */}
                     <NavLink
                     to="/about"
                     className={({ isActive }) =>
@@ -49,6 +51,8 @@ function Header() {
                     >
                     About
                     </NavLink>
+
+                    {/* property */}
                     <NavLink
                     to="/property"
                     className={({ isActive }) =>
@@ -59,6 +63,8 @@ function Header() {
                     >
                     Property
                     </NavLink>
+
+                    {/* agent */}
                     <NavLink
                     to="/agentDashboard"
                     className={({ isActive }) =>
@@ -69,6 +75,8 @@ function Header() {
                     >
                     Agent
                     </NavLink>
+
+                    {/* contact */}
                     <NavLink
                     to="/contact"
                     className={({ isActive }) =>
@@ -80,19 +88,19 @@ function Header() {
                     Contact
                     </NavLink>
                     
-        
+                    {/* get started */}
                     <button className="">
-                    {/* {!auth.user ? ( */}
-                        <NavLink to="/loginForm">Get Started</NavLink>
-                    {/* // ) : (
-                    //     <NavLink to="/agentDashboard">{auth.user}</NavLink>
-                    // )} */}
+                    {!user ? ( 
+                        <NavLink to="/login">Get Started</NavLink>
+                    ) : (
+                        <NavLink to="/agentDashboard">{user.username}</NavLink>
+                    )} 
                     </button>
-                    {/* {auth.user ? ( */}
-                    {/* <div className="block p-3 text-lg navlink" >
-                        <a href="/">Log Out</a>
-                    </div> */}
-                    {/*) : null}*/ }
+                    {user ? ( 
+                        <div className="block p-3 text-lg navlink" >
+                        <a  onClick={handleLogout}>Log Out</a>
+                    </div> 
+                    ) : null}
                 </nav>
                 </div>
         
@@ -100,11 +108,11 @@ function Header() {
                 <div
                 className="block lg:hidden mr-0 p-2 rounded-2xl hover:bg-purple-700 duration-300"
                 >
-                {/* {nav ? ( */}
+                {nav ? (
                     <AiOutlineClose size={30} className="" />
-                {/* ) : ( */}
+                ) : ( 
                     <AiOutlineMenu size={30} className="" />
-                {/* )} */}
+                )} 
                 </div>
         
                 {/* Mobile Menu */}

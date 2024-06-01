@@ -25,7 +25,6 @@ function Home() {
                 <SearchButton />
                 </div>
                 <HeroImageBox p="Featured Homes" url ={items[0]?.url}/>
-                {/* <HeroImageBox p="Featured Homes" url ={false | require("../../assets/h2.jpg")/>*/}
             </div>
         </div>
         </section>

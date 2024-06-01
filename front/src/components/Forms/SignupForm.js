@@ -57,20 +57,20 @@ const SignupForm = () => {
       </div> */}
 
       <form onSubmit={handleSubmit}>
-        <div className="flex  text-left py-10 bg-zinc-700 mb-10 justify-center align-middle text-xl  ">
+        <div className="flex  text-left py-10 bg-zinc-700 mb-10 justify-center align-middle text-xl  mt-24">
           <div className="w-[400px]">
             <div className="grid grid-cols-2  mb-4 align-middle">
               
               <div
                 className="bg-zinc-900 flex justify-center align-middle py-4"
-                onClick={() => navigate("/userForm")}
+                onClick={() => navigate("/register")}
               >
                 Sign up
               </div>
               
               <div
                 className="bg-zinc-800 flex justify-center align-middle py-4"
-                onClick={() => navigate("/loginForm")}
+                onClick={() => navigate("/login")}
               >
                 Login
               </div>

@@ -18,8 +18,8 @@ function App() {
         <Route path="property" element={<Property />} />
         <Route path="agentDashboard" element={<AgentDashboard />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="loginForm" element={<LoginForm />} />
-        <Route path="SignupForm" element={<SignupForm />} />
+        <Route path="login" element={<LoginForm />} />
+        <Route path="register" element={<SignupForm />} />
         <Route path="AgentForm" element={<RegisterAgent />} />
         <Route path="*" element={<Error />} /> 
       </Routes>
