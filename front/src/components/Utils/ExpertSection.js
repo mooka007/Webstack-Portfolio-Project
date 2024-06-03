@@ -1,11 +1,9 @@
 import React from "react";
 import ExpertCard from "./ExpertCard";
-import agentwo from "../../assets/agentwo.jpg"
-import agentone from "../../assets/agentone.jpg"
-import agenthree from "../../assets/agenthree.jpg"
-import agentfour from "../../assets/agentfour.jpg"
+import agents  from "./AgentData"
 
 const ExpertSection = (props) => {
+  // console.log(agents)
   return (
     <div className="w-full">
       <div className="max-w-[1440px] mx-auto py-20 px-10 flex-col justify-between text-center md:flex-row">
@@ -17,18 +15,23 @@ const ExpertSection = (props) => {
 
         {/* property-card-container */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="p-2">
-            <ExpertCard name="Agent One" img={agentone}/>
+        {
+          agents.map(({ id, name, img }) => (
+            <div className="p-2"  key={id}>
+              <ExpertCard name={name} img={img}/>
+            </div>
+            ))
+        }
+
+          {/* <div className="p-2">
+            <ExpertCard name="Agent two" />
           </div>
           <div className="p-2">
-            <ExpertCard name="Agent two" img={agentwo}/>
+            <ExpertCard name="Agent three" />
           </div>
           <div className="p-2">
-            <ExpertCard name="Agent three" img={agenthree}/>
-          </div>
-          <div className="p-2">
-            <ExpertCard name="Agent four" img={agentfour}/>
-          </div>
+            <ExpertCard name="Agent four" />
+          </div> */}
         </div>
       </div>
     </div>

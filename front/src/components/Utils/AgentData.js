@@ -1,28 +1,45 @@
+import agentone from "../../assets/agentone.jpg"
+import agentwo from "../../assets/agentwo.jpg"
+import agenthree from "../../assets/agenthree.jpg"
+import agentfour from "../../assets/agentfour.jpg"
+
 const agents = [
     {
-        "img" : "",
-        "address": "7 street Avenue, Boston, Canada",
+        "name": "agentOne",
+        "img" : agentone,
+        "address": "1 street Avenue, Boston, Canada",
         "phonenumber": "+212-89-203-3333",
         "email" : "agentOne@gmail.com",
         "twitter" : "@AgentOne",
         "Instagram" : "@AgentOne", 
     },
-    // {
-    //     id: "01",
-    //     productName: "Stone and Beam Westview ",
-    //     imgUrl: productImg01,
-    //     category: "sofa",
-    //     price: 193,
-    //     shortDesc:
-    //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
-    //     description:
-    //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
-    //     reviews: [
-    //       {
-    //         rating: 4.7,
-    //         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    //       },
-    //     ],
-    //     avgRating: 4.5,
-    //   },
+    {
+        "name": "agentwo",
+        "img" : agentwo,
+        "address": "2 street Avenue, Boston, Canada",
+        "phonenumber": "+212-89-203-3333",
+        "email" : "agentwo@gmail.com",
+        "twitter" : "@agentwo",
+        "Instagram" : "@agentwo", 
+    },
+    {
+        "name": "agenthree",
+        "img" : agenthree,
+        "address": "3 street Avenue, Boston, Canada",
+        "phonenumber": "+212-89-203-3333",
+        "email" : "agenthree@gmail.com",
+        "twitter" : "@agenthree",
+        "Instagram" : "@agenthree", 
+    },
+    {
+        "name": "agentfour",
+        "img" : agentfour,
+        "address": "4 street Avenue, Boston, Canada",
+        "phonenumber": "+212-89-203-3333",
+        "email" : "agentfour@gmail.com",
+        "twitter" : "@agentfour",
+        "Instagram" : "@agentfour", 
+    }
 ]
+
+export default agents;

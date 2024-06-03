@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import User1 from "../../assets/agentone.jpg";
 import { NavLink } from "react-router-dom";
+import agents  from "../Utils/AgentData"
 
 const AgentHeroBanner = (props) => {
+  const [selectedAgent, setSelectedAgent] = useState(null);
 
+  const handleAgentClick = (agent) => {
+    setSelectedAgent(agent);
+  };
 
   return (
     <div>
@@ -14,28 +19,33 @@ const AgentHeroBanner = (props) => {
             <div className="my-10 md:my-auto">
               <h1 className="pb-4 text-4xl md:text-6xl">{props.header}</h1>
               <h5>{props.text}</h5>
-              <div className="md:grid grid-cols-2 justify-between w-full pt-6 text-left ">
-                <div>
-                  <h5 className="inline-block mr-4">address</h5>
-                  <p>7 street Avenue, Boston, Canada</p>
-                  <h5 className="inline-block mr-4">phonenumber</h5>
-                  <p>+212-89-203-3333</p>
-                  <h5 className="inline-block mr-4">email</h5>
-                  <p>agentOne@gmail.com</p>
-                </div>
-                <div className="">
-                  <h5 className="inline-block mr-4">twitter</h5>
-                  <p>@AgentOne</p>
-                  <h5 className="inline-block mr-4">Instagram</h5>
-                  <p>@AgentOne</p>
-                </div>
+              {
+                  agents.map(({ id, name, img, address, phonenumber, email, twitter, Instagram }) => (
+                    <div className="md:grid grid-cols-2 justify-between w-full pt-6 text-left ">
+                    <div>
+                      <h5 className="inline-block mr-4">address</h5>
+                      <p>{address}</p>
+                      <h5 className="inline-block mr-4">phonenumber</h5>
+                      <p>{phonenumber}</p>
+                      <h5 className="inline-block mr-4">email</h5>
+                      <p>{email}</p>
+                    </div>
+                    <div className="">
+                      <h5 className="inline-block mr-4">twitter</h5>
+                      <p>{twitter}</p>
+                      <h5 className="inline-block mr-4">Instagram</h5>
+                      <p>{Instagram}</p>
+                    </div>
 
-                <button className="mt-10 w-[200px]">
-                  <NavLink className="" to="/AgentForm">
-                    contact Agent 
-                  </NavLink>
-                </button>
-              </div>
+                    <button className="mt-10 w-[200px]">
+                      <NavLink className="" to="/AgentForm">
+                        contact Agent 
+                      </NavLink>
+                    </button>
+                  </div>
+                    ))
+                }
+              
             </div>
 
             {/* header Image */}
